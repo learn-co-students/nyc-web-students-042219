@@ -120,17 +120,35 @@ def game_hash
 end
 
 def get_players
-  []
+  game_hash.values.map do |team|
+    team[:players]
+  end.flatten
 end
 
 def num_points_scored(player_name)
   # look through the all of the players
   players = get_players
-  binding.pry
 
   # find the one where player_name matches the player's name
+  player = players.find do |player_hash|
+    player_hash[:player_name] == player_name
+  end
 
   # return the players points
+  player[:points]
+end
+
+def shoe_size(player_name)
+  # look through the all of the players
+  players = get_players
+
+  # find the one where player_name matches the player's name
+  player = players.find do |player_hash|
+    player_hash[:player_name] == player_name
+  end
+
+  # return the players shoe size
+  player[:shoe]
 end
 
 
@@ -155,14 +173,21 @@ def double_array(arr)
 end
 
 
-instructors = [{name: "zach", mood: "joyful"}, {name: "chris", mood: "chipper"}, {name: "alex", mood: "fine"}]
+teachers = [{name: "zach", mood: "joyful"}, {name: "chris", mood: "chipper"}, {name: "alex", mood: "fine"}]
 
 def get_instructor_names(instructors)
   # this method should return an array of strings ["zach", "chris", "alex"]
+  instructors.map do |instructor|
+    instructor[:name]
+  end
 end
+
+puts get_instructor_names(teachers)
+
+
 
 
 arr = [1,2,3,4,5,6]
 result = double_array(arr)
 
-binding.pry
+# binding.pry
