@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -116,3 +118,51 @@ def game_hash
     }
   }
 end
+
+def get_players
+  []
+end
+
+def num_points_scored(player_name)
+  # look through the all of the players
+  players = get_players
+  binding.pry
+
+  # find the one where player_name matches the player's name
+
+  # return the players points
+end
+
+
+
+
+
+def double_array(arr)
+  # doubles = []
+  #
+  # arr.each do |n|
+  #   doubles << n * 2
+  # end
+  #
+  # doubles
+
+  # i have an array of n things
+  # i want to get back n things
+  # but where each one is different
+  arr.map do |n|
+    n * 2
+  end
+end
+
+
+instructors = [{name: "zach", mood: "joyful"}, {name: "chris", mood: "chipper"}, {name: "alex", mood: "fine"}]
+
+def get_instructor_names(instructors)
+  # this method should return an array of strings ["zach", "chris", "alex"]
+end
+
+
+arr = [1,2,3,4,5,6]
+result = double_array(arr)
+
+binding.pry
