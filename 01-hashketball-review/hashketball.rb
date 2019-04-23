@@ -125,14 +125,21 @@ def get_players
   end.flatten
 end
 
+def find_player_by_name(all_players, player_name)
+  all_players.find do |player_hash|
+    player_hash[:player_name] == player_name
+  end
+end
+
 def num_points_scored(player_name)
   # look through the all of the players
   players = get_players
 
   # find the one where player_name matches the player's name
-  player = players.find do |player_hash|
-    player_hash[:player_name] == player_name
-  end
+  player = find_player_by_name(players, player_name)
+  # player = players.find do |player_hash|
+  #   player_hash[:player_name] == player_name
+  # end
 
   # return the players points
   player[:points]

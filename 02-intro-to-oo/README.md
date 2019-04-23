@@ -3,6 +3,23 @@ Intro to Object Orientation
 
 aka: Object Oriented Programming (OOP)
 
+Everything is an Object in Ruby
+
+- everything we make comes from a blueprint (aka class)
+- classes are blueprints, sets of method
+- do the stuff that they do
+- instances get all the methods
+
+- Integers have collections of methods (things we can call on an Integer)
+
+"Behavior"
+Encapsulates Behavior
+
+Attributes, Data (State)
+"Data (State)"
+Encapsulates State
+
+Data + Behavior together into one object
 
 ## Lecture Notes
 
@@ -12,6 +29,7 @@ aka: Object Oriented Programming (OOP)
 *
 
 Does the following meet those properties?
+Kind of
 
 player = {
   player_name: "Alan Anderson",
