@@ -1,4 +1,5 @@
 require 'pry'
+require_relative './lib/book'
 
 player = {
   player_name: "Alan Anderson",
@@ -12,15 +13,20 @@ player = {
   slam_dunks: 1
 }
 
-calvin_and_hobbes = {
-  title: 'the essential calvin and hobbes',
-  author: 'bill watterson'
-}
+# calvin_and_hobbes = {
+#   title: 'the essential calvin and hobbes',
+#   author: 'bill watterson'
+# }
+#
+# poodr = {
+#   title: 'practical object oriented design in ruby',
+#   author: 'sandi metz'
+# }
 
-poodr = {
-  title: 'practical object oriented design in ruby',
-  author: 'sandi metz'
-}
+
+calvin_and_hobbes = Book.new('the essential calvin and hobbes', 'bill watterson')
+poodr = Book.new('practical object oriented design in ruby', 'sandi metz')
+
 
 
 binding.pry
