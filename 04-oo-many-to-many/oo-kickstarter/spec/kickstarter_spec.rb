@@ -43,6 +43,7 @@ describe 'Backer - More Advanced #back_project' do
   it 'also adds the backer to the project\'s backers array' do
     logan = Backer.new("Logan")
     hoverboard = Project.new("Awesome Hoverboard")
+
     logan.back_project(hoverboard)
 
     # If by this point, the project knows about a new backer, where does that mean
