@@ -3,6 +3,7 @@ require_relative './user.rb'
 require_relative './tweet.rb'
 
 
+
 coffee_dad = User.new('coffee_dad')
 tea_uncle = User.new('tea_uncle')
 

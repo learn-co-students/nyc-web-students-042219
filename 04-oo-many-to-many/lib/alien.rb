@@ -30,7 +30,8 @@ class Alien
     # find the colonies this alien has, return the associated planet for each colony
     # we just build some tools that will be helpful for us
     # [<Planet>, <Planet>]
-
-
+    self.colonies.map do |colony|
+      colony.planet
+    end
   end
 end

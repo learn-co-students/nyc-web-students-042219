@@ -20,7 +20,7 @@ class User
   # user.post_tweet("coffeeeeeeeee")
 
   def post_tweet(message)
-    tweet = Tweet.new(message, self)
+    Tweet.new(message, self)
     # @tweets << tweet
   end
 
