@@ -2,9 +2,14 @@
 
 # DRY
 
+Dont Repeat Yourself
+
 
 
 ## What strategies for code reuse have we seen thus far
+
+methods
+class 
 
 # My Pets
 

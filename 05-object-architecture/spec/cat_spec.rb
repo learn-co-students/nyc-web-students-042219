@@ -1,4 +1,5 @@
 require_relative 'spec_helper.rb'
+require 'pry'
 
 describe Cat do
 
@@ -9,6 +10,8 @@ describe Cat do
   end
 
   it "initializes with a name" do
+    lofi = Cat.new('lofi')
+    binding.pry
     expect(cat.name).to eq("crookshanks")
   end
 
