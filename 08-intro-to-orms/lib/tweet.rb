@@ -1,10 +1,18 @@
 class Tweet
   attr_accessor :message, :user_id
   attr_reader :id
-  ALL = []
+  # ALL = []
+  # ALL = "hello" X bad X
+  # ALL << "hello" fine
 
   def self.all
-    ALL
+    sql = "SELECT * FROM tweets"
+    results = DB[:conn].execute(sql)
+
+    # right now this returns an array of hashes,
+    # i want this to return an array of Tweet instances
+    results
+
   end
 
   def initialize(attributes={})

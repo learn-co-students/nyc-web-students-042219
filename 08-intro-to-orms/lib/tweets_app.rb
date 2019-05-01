@@ -10,7 +10,7 @@ class TweetsApp
     message = gets.chomp
 
     tweet = Tweet.new({'user_id' => user_id, 'message' => message})
-    tweet.save
+    # tweet.save
 
     tweets = Tweet.all
     render(tweets)
@@ -23,4 +23,5 @@ class TweetsApp
       puts "#{i}. User #{tweet.user_id} says: #{tweet.message}"
     end
   end
+
 end
