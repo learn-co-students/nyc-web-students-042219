@@ -17,9 +17,9 @@ class Player
 
 
 
-  def initialize(name, number, shoe, points)
-    @name = name
-    @number = number
+  def initialize(player_hash)
+    @name = player_hash['name']
+    @number = player_hash['number']
     @shoe = shoe
     @points = points
   end

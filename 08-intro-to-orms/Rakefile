@@ -5,6 +5,6 @@ task :console do
   Pry.start
 end
 
-task :dog do
-  puts "woof!"
-end
+# task :dog do
+#   puts "woof!"
+# end

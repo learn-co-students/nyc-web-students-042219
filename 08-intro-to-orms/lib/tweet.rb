@@ -11,17 +11,45 @@ class Tweet
 
     # right now this returns an array of hashes,
     # i want this to return an array of Tweet instances
-    results
+    # binding.pry
+    results.map do |row|
+      # Tweet.new({'message' => row['message'], 'user_id' => row['user_id']})
+      Tweet.new(row)
+    end
+
 
   end
 
-  def initialize(attributes={})
+  def initialize(attributes = {})
     @message = attributes['message']
     @user_id = attributes['user_id']
+
+    @id = attributes['id']
   end
 
   def save
-    self.class.all << self
+
+    if !persisted?
+      sql = <<-sql
+       INSERT INTO tweets
+       (message, user_id)
+       VALUES (?, ?)
+      sql
+      # binding.pry
+
+      DB[:conn].execute(sql, self.message, self.user_id)
+    else
+      # do the update SQL
+
+    end
+
+    # self.class.all << self
+  end
+
+  private
+
+  def persisted?
+    !!self.id
   end
 
 end
