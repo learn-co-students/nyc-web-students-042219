@@ -3,9 +3,6 @@
 + Definition:
 
 
-
-## Active Record Pattern
-
 # CRUD REVIEW
 What are the four ways we can interact with data?
 
@@ -36,8 +33,36 @@ Draw out what your schema (structure of your tables and columns) would be for th
 
 1. Books and Authors where each book has a single author. Books should have a title and authors should have a name
 
+author = Author.new('herman m')
+Book.new("Moby Dick", author)
+author.books
+Book.all.select { |book| book.author == self }
+
+SELECT * FROM books WHERE author_id = 1
+books
+id | title                                     | author_id
+10    Practical Object Oriented Design in Ruby   1
+11    Secrets of the JavaScript Ninja            2
+12    99 Bottles of OOP                          1
+
+
+authors
+id | name           
+1    Sandi Metz                 
+2    John Resig                 
+
+
+
+
+
 Q: Write the SQL to find all books written by a certain author given the author's id.
 Q: Write the SQL to find all books written by a certain author given the author's name.
+
+
+
+
+
+
 
 
 

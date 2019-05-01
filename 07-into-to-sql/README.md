@@ -121,12 +121,13 @@ albums.artist_id = artists.id;
 9. Write the SQL to display artist name, album title and number of tracks on that album
 
 ```sql
-SELECT artists.name, albums.title, tracks.*
+SELECT artists.name, albums.title, COUNT(tracks.id)
 FROM artists
 JOIN albums ON
 albums.artist_id = artists.id
 JOIN tracks ON
-tracks.album_id = albums.id;
+tracks.album_id = albums.id
+GROUP BY tracks.album_id;
 ```
 
 10. Write the SQL to return the name of all of the artists in the 'Pop' Genre

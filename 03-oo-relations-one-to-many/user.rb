@@ -15,6 +15,7 @@ class User
     Tweet.all.select do |tweet|
       tweet.user == self
     end
+    # SELECT * FROM tweets WHERE tweets.user_id = #{self.id}
   end
 
   # user.post_tweet("coffeeeeeeeee")
