@@ -2,6 +2,11 @@
 
 + Definition:
 
+Object Oriented Programming World
+Relational Database World
+
+Going back and forth between those two things
+
 
 # CRUD REVIEW
 What are the four ways we can interact with data?
