@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_144822) do
+ActiveRecord::Schema.define(version: 2019_05_03_150241) do
 
   create_table "nests", force: :cascade do |t|
     t.integer "squirrel_id"
+    t.integer "tree_id"
   end
 
   create_table "squirrels", force: :cascade do |t|
