@@ -8,43 +8,45 @@ require 'json'
 #   * https://www.googleapis.com/books/v1/volumes?q=ruby+programming
 # * Display the titles, author names, and description for each book
 
-Book (title, description)
-Author
-User
 
-class CLI
+# Commented out broken code
+# Book (title, description)
+# Author
+# User
+#
+# class CLI
+#
+#   attr_accessor :current_user
+#
+#   def welcome
+#     puts "Welcome to the Book Searcher"
+#     puts "Enter your name"
+#     username = gets.chomp
+#     current_user = User.find_by(username: username)
+#
+#     puts "Enter a search term to find books about:"
+#     search_term = gets.chomp
+#   end
+#
+#   def print_books
+#
+#   end
+#
+# end
+#
+# ClI.new.welcome
 
-  attr_accessor :current_user
-
-  def welcome
-    puts "Welcome to the Book Searcher"
-    puts "Enter your name"
-    username = gets.chomp
-    current_user = User.find_by(username: username)
-    
-    puts "Enter a search term to find books about:"
-    search_term = gets.chomp
-  end
-
-  def print_books
-
-  end
-
-end
-
-ClI.new.welcome
-
-
-def welcome
-  puts "Welcome to the Book Searcher"
-  puts "Enter a search term to find books about:"
-  search_term = gets.chomp
-end
-
-def print_books
-
-end
-
+# 
+# def welcome
+#   puts "Welcome to the Book Searcher"
+#   puts "Enter a search term to find books about:"
+#   search_term = gets.chomp
+# end
+#
+# def print_books
+#
+# end
+#
 
 
 puts "Welcome to the Book Searcher"

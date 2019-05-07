@@ -2,6 +2,12 @@ Active Record
 ======================
 ## Lecture Notes
 
+SQL
+
+SQL
+Sqirrel-based Learning
+
+
 ### Rake and File Structure
 
 - Rake
