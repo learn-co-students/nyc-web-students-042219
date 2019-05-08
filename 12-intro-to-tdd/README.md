@@ -1,5 +1,11 @@
 # Intro to TDD
 * What is TDD?
+BDD
+Behavior Driven Development
+
+EDD
+Error Driven Development
+
 * Why?
 * Define unit test vs. integration test
 * Define regression
