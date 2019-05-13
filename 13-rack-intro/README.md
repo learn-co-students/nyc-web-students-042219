@@ -29,8 +29,6 @@
 - Update
 - Delete/Destroy
 
-# POST "apple.com/support"
-
 ## HTTP Verbs:
 
 - GET -- READ
