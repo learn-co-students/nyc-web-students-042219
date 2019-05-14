@@ -1,0 +1,13 @@
+<h1>Rapper Show</h1>
+
+
+<%= @rapper.name%>
+<br/>
+
+<%= @rapper.album_sales%>
+<br/>
+
+<form action="/rappers/<%=@rapper.id%>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Rapper">
+</form>
