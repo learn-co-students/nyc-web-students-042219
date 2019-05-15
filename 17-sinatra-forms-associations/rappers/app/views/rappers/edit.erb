@@ -1,0 +1,9 @@
+<h1>Rapper Edit</h1>
+
+<form action="/rappers/<%=@rapper.id%>" method="Post">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="name" value="<%=@rapper.name%>">
+  <input type="text" name="album_sales" value="<%=@rapper.album_sales%>">
+  <input type="text" name="fire" value="<%=@rapper.fire%>">
+  <input type="submit" value="Edit Rapper">
+</form>
