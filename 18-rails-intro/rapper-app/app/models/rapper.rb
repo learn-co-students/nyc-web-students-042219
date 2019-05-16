@@ -1,0 +1,2 @@
+class Rapper < ApplicationRecord
+end
