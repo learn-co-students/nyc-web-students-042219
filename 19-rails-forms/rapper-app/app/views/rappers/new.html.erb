@@ -1,0 +1,41 @@
+<h1>Rappers#new</h1>
+<p>Find me in app/views/rappers/new.html.erb</p>
+
+
+<!-- <form action="/rappers" method="post">
+  <input type="text" name="rapper[name]" placeholder="Rapper Name">
+  <input type="number" name="rapper[age]" placeholder="Rapper Age">
+  <input type="number" name="rapper[album_sales]" placeholder="Album Sales">
+  <input type="text" name="rapper[fire]" value="true">
+  <input type="submit" value="Submit Rapper">
+</form> -->
+
+
+Form_Tag
+<%=form_tag "/rappers" do %>
+  <%= text_field_tag "rapper[name]"%>
+  <%= number_field_tag "rapper[age]"%>
+  <%= number_field_tag "rapper[album_sales]"%>
+  <%= text_field_tag "rapper[fire]"%>
+  <%= text_field_tag "song[title]"%>
+  <%= text_field_tag "song[length]"%>
+  <%= submit_tag "Submit"%>
+<%end%>
+
+<br>
+<br>
+
+Form_For
+<%=form_for @rapper do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :email %>
+<%= f.text_field :number %>
+<%end%>
+
+
+
+
+
+
+
+<!-- <input type="number" name="rapper[age]" placeholder="Rapper Age"> -->
