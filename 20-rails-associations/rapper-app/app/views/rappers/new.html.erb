@@ -1,0 +1,22 @@
+<h1>Rappers#new</h1>
+<p>Find me in app/views/rappers/new.html.erb</p>
+
+<% if flash[:notice] %>
+  <h3><%=flash[:notice]%></h3>
+<%end%>
+
+<%=form_for @rapper do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :fire %>
+<%= f.number_field :age %>
+<%= f.number_field :album_sales %>
+<%=f.submit "Submit"%>
+<%end%>
+
+
+
+
+
+
+
+<!-- <input type="number" name="rapper[age]" placeholder="Rapper Age"> -->

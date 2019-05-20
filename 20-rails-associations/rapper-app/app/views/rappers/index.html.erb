@@ -1,0 +1,12 @@
+<h1>Rappers#index</h1>
+<p>Find me in app/views/rappers/index.html.erb</p>
+<ul>
+
+
+  <%@rappers.each do |rapper|%>
+  <li><%=link_to rapper.name, rapper %></li>
+  <%end%>
+
+
+
+</ul>

@@ -1,0 +1,14 @@
+<h1>Song new</h1>
+
+<%=form_for @song do |f|%>
+  <%=f.label :title%>
+  <%=f.text_field :title%>
+  <%# Review of Collection Select:
+     - If we are using f.collection_select we should not specify the model because our form already knows what model it's creating
+     - First argument in our f.collection_select is the attribute we are trying to fill in for the model
+     - Second argument is the collection (or list of data) that our select tag should be iterating through
+     - Third argument is the information from that collection that our first argument (i.e. the attribute) should evaluate to
+     - Last mandatory argument is the information about our collection that we want to display to our User %>
+  <%=f.collection_select :rapper_id, Rapper.all, :id, :name%>
+  <%=f.submit "Submit"%>
+<%end%>
