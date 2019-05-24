@@ -1,0 +1,27 @@
+<h1>Menu</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<h4>Your Cart: </h4>
+
+🤔
+<ol>
+  <%   @items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ol>
+
+
+<hr>
+
+<% @nachos.map do |nacho| %>
+  <ul>
+    <li>
+      <%= link_to nacho.name, nacho %>
+      $<%= nacho.price %>
+      <%= button_to "Add To Cart", "/cart", {method: :patch, params: {nacho_id: nacho.id} }%>
+    </li>
+  </ul>
+<% end %>
