@@ -17,20 +17,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskForm = document.querySelector('#create-task-form')
   const taskInput = document.querySelector('#new-task-description')
   const taskList = document.querySelector('#tasks')
-  // find the form
-  // find the input
+  const sorter = document.querySelector('#sorter')
+
+  // Application State
+  // keep track of all the tasks
+  let tasks = []
 
   // Event Listeners
+  // remove a task
   taskList.addEventListener('click', event => {
     if (event.target.dataset.action === 'delete') {
       // get the task description
       const buttonDescription = event.target.dataset.description
 
       // get the li based on that description
-      const liToRemove = document.querySelector(`li[data-description="${buttonDescription}"]`);
-      console.log(liToRemove)
+      // const liToRemove = document.querySelector(`li[data-description="${buttonDescription}"]`);
+      // console.log(liToRemove)
       // remove it
-      liToRemove.remove()
+      // liToRemove.remove()
+
+      // NEW CODE!
+      // filter out the task we want to delete from our list of tasks
+      tasks = tasks.filter(task => task !== buttonDescription)
+      // rerender
+      renderAllTasks()
     }
   })
 
@@ -43,6 +53,65 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskDescription = taskInput.value
     console.log('task description is: ', taskDescription)
 
+    // NEW CODE! 
+    // add the task to our array of all the tasks
+    tasks.push(taskDescription)
+
+    // render them all
+    renderAllTasks()
+
+    taskForm.reset()
+
+    // append to the DOM / add to the list
+    // create a dom element (li tag)
+    // const taskLi = document.createElement('li')
+    // taskLi.innerText = taskDescription
+    // taskLi.dataset.description = taskDescription
+
+    // // create a delete button
+    // const deleteButton = document.createElement('button')
+    // deleteButton.innerText = 'x'
+    // deleteButton.dataset.action = 'delete'
+    // deleteButton.dataset.description = taskDescription
+
+    // // append to the task
+    // taskLi.appendChild(deleteButton)
+
+    // // listen for a click
+    // // deleteButton.addEventListener('click', () => {
+    // //   console.log('delete me!')
+    // //   // remove the task
+    // //   taskLi.remove()
+    // // })
+
+    // taskList.appendChild(taskLi)
+
+  })
+
+  // NEW CODE!
+  // sort the tasks
+  sorter.addEventListener('click', event => {
+    if (event.target.dataset.sort === 'asc') {
+      // sort function will MUTATE our task array
+      tasks.sort(function (taskA, taskB) {
+        // MDN sort -> localecompare https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        return taskA.localeCompare(taskB)
+      })
+
+      // after sorting, re-render the task list
+      renderAllTasks()
+
+    } else if (event.target.dataset.sort === 'desc') {
+      // same as above but switch order for sorting
+      tasks.sort(function (taskA, taskB) {
+        return taskB.localeCompare(taskA)
+      })
+      renderAllTasks()
+    }
+  })
+
+  // moved from submit event handler - code for rendering one task
+  function renderTask(taskDescription) {
     // append to the DOM / add to the list
     // create a dom element (li tag)
     const taskLi = document.createElement('li')
@@ -58,17 +127,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // append to the task
     taskLi.appendChild(deleteButton)
 
-    // listen for a click
-    // deleteButton.addEventListener('click', () => {
-    //   console.log('delete me!')
-    //   // remove the task
-    //   taskLi.remove()
-    // })
-
     taskList.appendChild(taskLi)
+  }
 
-    taskForm.reset()
-  })
+  // code for rendering all tasks
+  function renderAllTasks() {
+    // clear the list
+    taskList.innerHTML = ""
 
-
+    // rerender
+    tasks.forEach(task => renderTask(task))
+    // tasks.forEach(renderTask) 
+    // ^ would also work! render task is a callback function that expects one argument
+  }
 });
