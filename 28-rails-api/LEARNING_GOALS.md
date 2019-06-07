@@ -6,6 +6,5 @@
 
 - Fetch (GET and POST)
 - DOM Manipulation
-- Optimistic/Pessimistic Rendering
 - BONUS: ES6 object destructuring fun
 - BONUS: form elements
