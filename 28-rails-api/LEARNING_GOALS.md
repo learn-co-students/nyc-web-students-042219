@@ -3,8 +3,5 @@
 - Understand CORS configuration
 - Use a serializer to render JSON
 - BONUS: Rails Enums
-
-- Fetch (GET and POST)
-- DOM Manipulation
-- BONUS: ES6 object destructuring fun
-- BONUS: form elements
+- FRONTEND: Fetch (GET and POST)
+- FRONTEND: DOM Manipulation
