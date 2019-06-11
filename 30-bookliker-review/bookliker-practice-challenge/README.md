@@ -1,12 +1,15 @@
 # Lecture Goals
 
-- Application State
+- DOMContentLoaded
+- Working with APIs
+  - Structuring fetch requests
+- Local State vs Server State
+  - When to use it
+  - How to manipulate it
+    - Array methods
+  - Re-rendering vs fine-grained DOM manipulation
+- Using Datasets and HTML attributes
 - Code organization
-  - Event delegation
-- `fetch` with different HTTP Verbs (`POST`, `PATCH`, `DELETE`)
-  - Organizing fetches
-- Dataset attributes in elements you're creating
-- Re-rendering vs fine-grained DOM manipulation
 - Optimistic vs Pessimistic rendering
 - **BONUS** Adapters for APIs
 

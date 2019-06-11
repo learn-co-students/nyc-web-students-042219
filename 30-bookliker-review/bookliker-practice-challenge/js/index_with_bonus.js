@@ -1,15 +1,32 @@
-// Be able to click on a book, you should see the book's thumbnail and description and a list of users who have liked the book.
-
-// event listener on button
-
-// PATCH (fetch) 
-// update the DOM??? YES!
+/*** BONUS: API ADAPTER ***/
+// provides an interface for making fetch requests
+// function that returns an object
+// the keys on the returned object point to functions
+function createAdapter(baseUrl) {
+  return {
+    getAll: () => {
+      return fetch(baseUrl).then(r => r.json())
+    },
+    update: (id, data) => {
+      return fetch(`${baseUrl}/${id}`, {
+        method: 'PATCH',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(r => r.json())
+    }
+  }
+}
 
 /*** DOM Elements ***/
 const bookList = document.getElementById('list')
 const showPanel = document.querySelector('#show-panel')
 
 const BASE_URL = 'http://localhost:3000/books'
+
+// create an adapter for the books endpoint
+const adapter = createAdapter(BASE_URL)
 
 /*** Local State ***/
 let books = []
@@ -68,15 +85,8 @@ showPanel.addEventListener('click', e => {
     // optimistic!
     renderOneBook()
 
-    // what data are we sending to the server?
-    fetch(`http://localhost:3000/books/${selectedBookId}`, {
-      method: 'PATCH',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "users": selectedBook.users
-      })
+    adapter.update(selectedBookId, {
+      "users": selectedBook.users
     })
 
   }
@@ -91,8 +101,7 @@ bookList.addEventListener('click', e => {
 
 /*** Intitialize the page ***/
 function init() {
-  fetch(BASE_URL)
-    .then(r => r.json())
+  adapter.getAll()
     .then(bookData => {
       console.log('initial response from server:', bookData)
       books = bookData
@@ -102,4 +111,3 @@ function init() {
 }
 
 init()
-
