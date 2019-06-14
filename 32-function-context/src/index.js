@@ -17,11 +17,15 @@
 // BIND
 // bnd sets the context,
 // chnages the value of this
+// arrow fns implicitly bind the context
 
 
 
 
-// as a contructor
+// as a constructor
+// with the new keyword
+
+
 
 
 function thisLogger() {
@@ -32,11 +36,13 @@ function locationLogger() {
 	console.log(this.location)
 }
 
+// chipotle.listEmployees()
 const listEmployees = function() {
 	console.log('OUTSIDE THE LOOP this is', this);
+	// const that = this
 
-	this.employees.forEach(function(employee){
-		console.log('INSIDE THE LOOP this is', this);
+	this.employees.forEach((employee) => {
+		// console.log('INSIDE THE LOOP this is', this);
 	  console.log(`Employee: ${employee.name} works at ${this.name}`)
 	})
 }
@@ -67,4 +73,38 @@ const chipotle = {
 	  {name: 'ian'},
 	],
 	listEmployees: listEmployees
+}
+
+
+function dogFactory(name)  {
+	return {
+		name: name,
+  	bark: function(){
+    	console.log(`woof im ${this.name}`)
+  	}
+	}
+}
+
+
+// function Restaurant(name, location) {
+// 	console.log(this)
+// 	this.name = name
+// 	console.log(this)
+// 	this.location = location
+// 	console.log(this)
+// }
+//
+// Restaurant.prototype.open = function() {
+// 	console.log(`${this.name} is open`);
+// }
+
+class Restuarant {
+	constructor(name, location) {
+		this.name = name
+		this.location = location
+	}
+
+	open() {
+		console.log(`${this.name} is open`);
+	}
 }
