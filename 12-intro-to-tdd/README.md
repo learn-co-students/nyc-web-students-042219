@@ -12,6 +12,8 @@ Error Driven Development
 * Write some tests using rspec
 * Define happy path & sad path
 
+calc.addition(8, "hello")
+
 ### Lecture Notes
 Define TDD vs. BDD
 
@@ -36,5 +38,5 @@ Phases of a test (follow a narrative)
 
 ##### What NOT to test
 - implementation details
-- private methods
+    - private methods
 - library code (ActiveRecord associations, JSON.parse)
