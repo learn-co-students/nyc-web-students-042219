@@ -15,15 +15,16 @@
 // 3. via a method of the function object
 // bind, call, apply
 // BIND
-// bnd sets the context,
+// bind sets the context,
 // chnages the value of this
 // arrow fns implicitly bind the context
 
 
 
 
-// as a constructor
+// 4. as a constructor
 // with the new keyword
+// this === self
 
 
 
@@ -101,10 +102,12 @@ function dogFactory(name)  {
 class Restuarant {
 	constructor(name, location) {
 		this.name = name
+		// self.name = name
 		this.location = location
 	}
 
 	open() {
+		// "#{self.name} is open"
 		console.log(`${this.name} is open`);
 	}
 }
