@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  diet: 1
+  image_url: MyString
+  species: one
+
+two:
+  name: MyString
+  diet: 1
+  image_url: MyString
+  species: two
