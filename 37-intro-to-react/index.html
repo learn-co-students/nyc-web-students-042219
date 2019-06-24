@@ -10,11 +10,36 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+
+      // Book.new("Harry Potter", "JK Rowling")
+
+      // Book.new(name: "Harry Potter", author: "JK Rowling")
+
+      // JS land
+      // JSX allows us to write something that looks like HTML but can interface directly with JS
+
+      function createHeader(greeting, tagline, color){
+        return <div className="header" style={{color: color}}>
+            <h1>{greeting}</h1>
+            <h3>{tagline}</h3>
+          </div>
+      }
+
+      function Header(props){
+        return <div className="header" style={{color: props.color}}>
+            <h1>{props.greeting}</h1>
+            <h3>{props.tagline}</h3>
+            {props.beef ? <strong>I'm Here!!!!</strong> : null}
+          </div>
+      }
+
       ReactDOM.render(
-        <div id="container">
-          <h1>Howdy Folks!</h1>
+        <div>
+          <Header greeting="Howdy Folks!" tagline="How's it goin?" color="red" beef={true}/>
+          <Header greeting="Yo." tagline="I dunno" color="blue" beef={false} />
+          <Header greeting="W'sup?!" tagline="Have a Flatiron day!" color="purple" beef={true} />
         </div>
-      , 
+        , 
         document.getElementById('root')
       )
 

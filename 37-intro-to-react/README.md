@@ -2,8 +2,8 @@ Intro to React
 =============================
 
 ## SWBATs
-- [ ] Visualize/identify Components on any website
-- [ ] Explain what a Component is conceptually in the UI
+- [x] Visualize/identify Components on any website
+- [x] Explain what a Component is conceptually in the UI
 - [ ] Briefly explain Babel's purpose in React
 - [ ] Explain what a React Component actually is in code
 - [ ] Use JSX to build custom components and render them in the browser
@@ -13,11 +13,60 @@ Intro to React
 
 ### Declarative vs Imperative Programming
 
-### Component-Based
+Imperative
 
-### Learn Once, Write Anywhere
+Making a burrito
+- Get a flour tortilla
+- Toast tortilla
+- Add rice
+- Add protein (chicken/tofu)
+- Add veggies
+- Sour cream
+- Corn
+- Guac
+- Pico de gallo
+- Cheese
+- Wrap the burrito (carefully)
 
+```js
+// find the the parent element
+// create a dom element
+// add attributes
+// add innerText
+// append new dom element to parent element
 
+const parent = document.getElementById("parent")
+const child = document.createElement("p")
+child.className = "child"
+child.innerText = "Hello!"
+
+parent.append(child)
+
+```
+
+Declarative
+
+Ordering a Burrito
+- Serving method
+- Choice of rice
+- Choice of beans
+- Choice of protein
+- Choice of veggies
+- Toppings
+
+```js
+function createChild(parentID, tagName, className, text){
+  const parent = document.getElementById(parentID)
+  const child = document.createElement(tagName)
+  child.className = className
+  child.innerText = text
+
+  parent.append(child)
+}
+
+createChild(parentElement, "p", "child", "Hello!")
+createChild(parentElement, "p", "child2", "Wutup!")
+```
 
 
 ### Absatractions to JSX
