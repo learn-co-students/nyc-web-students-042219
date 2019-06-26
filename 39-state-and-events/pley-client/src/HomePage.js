@@ -7,8 +7,7 @@ class HomePage extends React.Component {
     return (
       <div className="home-page">
         <SearchBar/>
-        <CustomerContainer category="Worst Customers"/>
-        <CustomerContainer category="Best Customers"/>
+        <CustomerContainer selectCustomer={this.props.selectCustomer} category="Worst Customers" customers={this.props.customers}/>
       </div>
     )
   }

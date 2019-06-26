@@ -4,20 +4,26 @@ State, Events, and Conditional Rendering
 ## SWBATs
 - [x] Add event handlers to elements in React
 - [x] Explain why we have Synthetic Events
-- [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
-- [ ] Instantiate `state` inside and outside of the `constructor`
-- [ ] Create event handler callbacks that manipulate `state`
-- [ ] Trigger rerenders by calling `setState`
+
+- [x] Instantiate `state` inside and outside of the `constructor`
+- [x] Create event handler callbacks that manipulate `state`
+- [x] Trigger rerenders by calling `setState`
+
 - [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
+- [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
 
 ## Lecture Notes
 
 
-### How do events work in vanilla JS?
-Find piece of DOM
-Add event listener to that piece
-Give callback to event listener (remove, add, etc.)
+### Using Events
+1. Find piece of DOM 
+  - `const beef = document.getElementById("beef")`
+2. Add event listener to that piece 
+  - `beef.addEventListener`
+3. Give callback to event listener (remove, add, etc.)
+  - `beef.addEventListener("click", () => {console.log("BEEF!")})`
 
+In React, we don't have to do step 1, we can skip directly to step 2 by adding event handlers directly to our JSX. We still must supply the event handler with a callback.
 
 
 ### Events
