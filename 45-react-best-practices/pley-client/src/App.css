@@ -1,0 +1,207 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: App-logo-spin infinite 4s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.customer-container {
+  width: 70%;
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.customer-card {
+  margin: 1vw;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(100,100,100,0.3);
+  border-radius: 10px;
+  display: flex;
+  text-align: left;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100,100,100,0.5);
+}
+
+.search-form {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 8%;
+  display: flex;
+  justify-content: center
+}
+
+.search-form .input {
+  flex-grow: 9;
+  border-width: 0px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.search-form .submit {
+  background-color: rgba(127,198,203);
+  color: rgba(220,78,133);
+  flex-grow: 1;
+  border-width: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.logo {
+  width: 5vw;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options > * {
+  border-style: none;
+}
+
+.search-container {
+  width: 100vw;
+  background-image: url("https://upserve.com/media/sites/2/group-of-friends-eating-at-a-restaurant-grand-opening-1100x600.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vw;
+  position: relative;
+}
+
+.customer-page {
+  margin: 1vw;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: 3fr 5fr 3fr;
+}
+
+.user-details {
+  border-style: solid;
+  border-color: rgba(220,78,133);
+  border-radius: 10px;
+  padding: 2vw;
+  text-align: center;
+}
+
+.user-details > img {
+  border-style: solid;
+  border-radius: 100vw;
+  border-color: rgba(127,198,203,0.5);
+}
+
+.sidebar-details {
+  text-align: left;
+}
+
+.review-container {
+  border-style: solid;
+  border-color: rgba(220,78,133);
+  border-radius: 10px;
+  padding: 2vw;
+}
+
+.new-review-sidebar {
+  border-style: solid;
+  border-color: rgba(220,78,133);
+  border-radius: 10px;
+  padding: 2vw;
+}
+
+.review-form > textarea {
+  height: 30vw;
+}
+
+.review-form > * {
+  width: 100%;
+}
+
+.review-tile {
+  border-color: rgba(127,198,203);
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+.ratings {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #b1b1b1;
+    overflow: hidden;
+}
+.full-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fde16d;
+}
+.empty-stars:before, .full-stars:before {
+    content:"\0024\0024\0024\0024\0024";
+    font-size: 14pt;
+}
+.empty-stars:before {
+    -webkit-text-stroke: 1px #848484;
+}
+.full-stars:before {
+    -webkit-text-stroke: 1px green;
+}
+/* Webkit-text-stroke is not supported on firefox or IE */
+
+/* Firefox */
+ @-moz-document url-prefix() {
+    .full-stars {
+        color: #ECBE24;
+    }
+}
+/* IE */
+ <!--[if IE]> .full-stars {
+    color: #ECBE24;
+}
+
