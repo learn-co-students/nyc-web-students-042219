@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProfileForm from "../components/ProfileForm";
 
 class ProfilePage extends React.Component {

@@ -7,15 +7,6 @@
 
 ---
 
-## Installation & Setup
-
-- react-router-dom (the version of React Router for web apps)
-- `npm install --save react-router-dom`
-- `import { BrowserRouter } from 'react-router-dom'`
-- Or alias as Router: `import { BrowserRouter as Router } from 'react-router-dom'`
-
----
-
 ## Server-side vs. Client-side Routing
 
 ### Server-side
@@ -61,13 +52,22 @@ Combine that with `if/else` logic and tracking history and you get `react-router
 
 ---
 
+## Installation & Setup
+
+- react-router-dom (the version of React Router for web apps)
+- `npm install --save react-router-dom`
+- `import { BrowserRouter } from 'react-router-dom'`
+- Or alias as Router: `import { BrowserRouter as Router } from 'react-router-dom'`
+
+---
+
 ## Different Types of React Routers
 
 *We'll be using BrowserRouter for this lecture*
 
 ### BrowserRouter
 
-BrowserRouter create classic URLs:
+BrowserRouter creates classic URLs:
 ```
 https://someurl.com/someroute
 ```
@@ -146,6 +146,7 @@ http://someurl.com/#/someroute
 - Basic auth routing
 
 ```js
+// component
 function ProtectedRoute(props) {
   if (props.isSignedIn) {
     return <Route path={props.path} component={props.component} />;
@@ -153,6 +154,8 @@ function ProtectedRoute(props) {
     return <Redirect to="/" />;
   }
 }
+// usage
+<ProtectedRoute path="/profile" component={ProfilePage} isSignedIn={this.state.isSignedIn} />
 // more advanced version: https://reacttraining.com/react-router/web/example/auth-workflow
 ```
 
@@ -160,7 +163,7 @@ function ProtectedRoute(props) {
 
 - Route props (`match`, `history`, `location`)
 - Nested routes and route params (`/path/:param`)
-- Query params (`/path?key1=value1&key2=value2`)
+- Search params (`/path?key1=value1&key2=value2`)
 
 ```js
 import queryString from 'query-string'

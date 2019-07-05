@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom'
 
 class SearchBar extends React.Component {
   state = {
@@ -13,10 +14,12 @@ class SearchBar extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.setSearchTerm(this.state.filterValue);
+    // this.props.setSearchTerm(this.state.filterValue);
+    this.props.history.push(`/customers?searchTerm=${this.state.filterValue}`)
   };
 
   render() {
+    console.log("SearchBar props", this.props)
     return (
       <div className="search-container">
         <div className="overlay" />
@@ -36,4 +39,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

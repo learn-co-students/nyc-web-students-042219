@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { Route, Switch } from 'react-router-dom'
+
 import "../App.css";
 import HomePage from "./HomePage";
 import AllCustomersPage from "./AllCustomersPage";
 import Navbar from "./Navbar";
 import ProfilePage from "./ProfilePage";
+import ProtectedRoute from '../components/ProtectedRoute'
 
 class App extends Component {
   state = {
@@ -28,26 +31,26 @@ class App extends Component {
 
   setSignIn = isSignedIn => this.setState({ isSignedIn });
 
-  renderPage() {
-    console.log("Current page:", this.state.page);
-    switch (this.state.page) {
-      case "home":
-        return <HomePage setSearchTerm={this.setSearchTerm} />;
-      case "customers/show":
-      case "customers":
-        return (
-          <AllCustomersPage
-            search={this.state.search}
-            page={this.state.page}
-            setCurrentPage={this.setCurrentPage}
-          />
-        );
-      case "profile":
-        return <ProfilePage />;
-      default:
-        return <div>Loading...</div>;
-    }
-  }
+  // renderPage() {
+  //   console.log("Current page:", this.state.page);
+  //   switch (this.state.page) {
+  //     case "home":
+  //       return <HomePage setSearchTerm={this.setSearchTerm} />;
+  //     case "customers/show":
+  //     case "customers":
+  //       return (
+  // <AllCustomersPage
+  //   search={this.state.search}
+  //   page={this.state.page}
+  //   setCurrentPage={this.setCurrentPage}
+  // />
+  //       );
+  //     case "profile":
+  //       return <ProfilePage />;
+  //     default:
+  //       return <div>Loading...</div>;
+  //   }
+  // }
 
   render() {
     return (
@@ -57,7 +60,12 @@ class App extends Component {
           isSignedIn={this.state.isSignedIn}
           setSignIn={this.setSignIn}
         />
-        {this.renderPage()}
+        <Switch>
+          <ProtectedRoute isSignedIn={this.state.isSignedIn} path="/profile" component={ProfilePage} />
+          <ProtectedRoute isSignedIn={this.state.isSignedIn} path="/customers" component={AllCustomersPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route component={() => <h1>You dun goofed.</h1>} />
+        </Switch>
       </div>
     );
   }
