@@ -1,7 +1,11 @@
 class CustomerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bio, :dogs, :children, :avatar_url, :dietary_info, :average_rating, :average_tip_rating
+  attributes :id, :name, :bio, :dogs, :children, :avatar_url, :dietary_info, :average_rating, :average_tip_rating, :review_ids
 
-  has_many :reviews
+  # has_many :reviews
+
+  def review_ids
+    object.reviews.pluck(:id)
+  end
 
   def average_rating
     if object.reviews.length > 0
