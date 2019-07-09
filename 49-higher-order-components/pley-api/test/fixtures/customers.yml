@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bio: MyText
+  name: MyString
+  dogs: false
+  children: false
+  dietary_info: MyText
+
+two:
+  bio: MyText
+  name: MyString
+  dogs: false
+  children: false
+  dietary_info: MyText
