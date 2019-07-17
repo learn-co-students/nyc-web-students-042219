@@ -1,0 +1,31 @@
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #b1b1b1;
+  overflow: hidden;
+}
+
+.full-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fde16d;
+  font-size: 14pt;
+  -webkit-text-stroke: 1px goldenrod;
+}
+
+.empty-stars{
+  font-size: 14pt;
+  -webkit-text-stroke: 1px #848484;
+}
+/* Webkit-text-stroke is not supported on firefox or IE */
+
+/* Firefox */
+@-moz-document url-prefix() {
+  .full-stars {
+      color: #ECBE24;
+  }
+}
