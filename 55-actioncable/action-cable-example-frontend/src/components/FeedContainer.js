@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ActionCableConsumer } from 'react-actioncable-provider';
 import TweetForm from './TweetForm';
 import TweetList from './TweetList';
 
@@ -43,6 +44,13 @@ class FeedContainer extends Component {
           handleDisplayTweets={this.handleDisplayTweets}
           newTweetCount={newTweets.length}
           tweets={displayedTweets}
+        />
+        <ActionCableConsumer
+          channel={{ channel: 'FeedChannel' }}
+          onReceived={tweet => {
+            console.log(tweet);
+            this.addTweet(tweet)
+          }}
         />
       </div>
     );

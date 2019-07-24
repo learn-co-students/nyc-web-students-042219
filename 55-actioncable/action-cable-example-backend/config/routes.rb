@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :feeds, only: [:show]
   resources :tweets, only: [:create]
   resources :likes, only: [:create]
+
+  mount ActionCable.server => '/cable'
 end
