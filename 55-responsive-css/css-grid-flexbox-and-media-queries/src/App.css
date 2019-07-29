@@ -1,0 +1,163 @@
+.app {
+  
+}
+
+/*------ NavBar BEGIN ------*/
+.nav-bar {
+  border-bottom-style: solid;
+  display: grid;
+  grid-template-columns: 2fr 9fr 5fr;
+}
+
+.home-button {
+
+}
+
+.search-bar > * {
+  height: 80%;
+}
+
+.search-bar > select {
+  width: 30%;
+}
+
+.search-bar > input {
+  width: 60%;
+}
+
+.user-controls {
+
+}
+
+.view-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.filter-bar > select {
+  flex-grow: 1;
+}
+
+.filter-bar {
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 50px;
+}
+/*------ NavBar END ------*/
+
+.main-container {
+  display: grid;
+  grid-template-areas:
+  "tc tc tc tc"
+  "pc pc pc cc"; 
+}
+
+/*------ Trending BEGIN ------*/
+.trending-container {
+  border-style: solid;
+  grid-area: tc;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.trending-card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/*.img-wrapper {
+  position: relative;
+/*  overflow: hidden;
+}*/
+
+/*.img-wrapper > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}*/
+.trending-description {
+  background-color: rgba(50,50,50, 0.6);
+  color: white;
+}
+/*------ Trending END ------*/
+
+/*------ Community BEGIN ------*/
+.community-container {
+  grid-area: cc;
+}
+
+.community-card {
+  border-style: solid;
+}
+/*------ Community END ------*/
+
+
+/*------ Post BEGIN ------*/
+.post-container {
+  grid-area: pc;
+}
+
+.post-card {
+  border-style: solid;
+  display: flex;
+  padding: 1vw;
+  margin: 2vw;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: rgba(100,100,100, 0.2);
+}
+
+.upvote-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(155,155,155, 0.5);
+}
+
+.upvote-panel > button {
+  background-color: rgba(155,155,155, 0.0);
+  border-style: none;
+  margin: 5px;
+}
+/*------ Post END ------*/
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+ 
+  .trending-container{
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    display: none;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-container {
+    order: 1;
+  }
+
+  .community-container {
+    order: 2;
+  }
+
+  .post-container {
+    order: 3;
+  }
+}
